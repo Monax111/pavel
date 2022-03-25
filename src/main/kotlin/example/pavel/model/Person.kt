@@ -1,4 +1,4 @@
-package example.pavel
+package example.pavel.model
 
 class Person(
     val name: String,

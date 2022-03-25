@@ -1,0 +1,10 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /pavel
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'info, health, metrics, prometheus, heapdump, scheduledtasks, logfile, loggers, mappings'
