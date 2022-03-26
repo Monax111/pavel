@@ -21,6 +21,8 @@ dependencies {
 
     implementation("org.springframework.boot:spring-boot-starter-actuator")
 
+    implementation("com.google.code.gson:gson:2.9.0")
+
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 
 }

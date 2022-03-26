@@ -1,7 +1,11 @@
 package example.pavel.controller
 
 
+import example.pavel.model.Person
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PathVariable
+import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RestController
 
 import kotlin.random.Random
@@ -10,8 +14,18 @@ import kotlin.random.Random
 @RestController
 class MathController {
 
-    @GetMapping("random")
-    fun random(): Int = Random.nextInt()
+    private val personStorage: MutableList<Person> = mutableListOf()
+
+    @PostMapping("person")
+    fun addPerson(@RequestBody person: Person): Person {
+        personStorage.add(person)
+        return person
+    }
+
+    @GetMapping("person/all")
+    fun allPerson() = personStorage
+
+
 
 
 }
