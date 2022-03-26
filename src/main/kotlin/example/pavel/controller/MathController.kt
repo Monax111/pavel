@@ -25,6 +25,8 @@ class MathController {
     @GetMapping("person/all")
     fun allPerson() = personStorage
 
+    @GetMapping("person/random")
+    fun randomPerson() = personStorage[Random.nextInt(0,personStorage.size)]
 
 
 
