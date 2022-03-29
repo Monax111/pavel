@@ -8,3 +8,13 @@ management:
     web:
       exposure:
         include: 'info, health, metrics, prometheus, heapdump, scheduledtasks, logfile, loggers, mappings'
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/test
+    username: test
+    password: test
+
+  jpa:
+    hibernate:
+      ddl-auto: create
