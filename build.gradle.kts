@@ -6,6 +6,7 @@ plugins {
     kotlin("jvm") version "1.6.10"
     kotlin("plugin.spring") version "1.6.10"
     kotlin("plugin.jpa") version "1.6.10"
+    jacoco
 }
 
 group = "com.example"
@@ -26,9 +27,13 @@ dependencies {
 
     implementation("com.google.code.gson:gson:2.9.0")
 
+    implementation("org.springdoc:springdoc-openapi-ui:1.6.6")
+
     implementation(group = "org.postgresql", name = "postgresql")
+    implementation(group = "org.testcontainers", name = "postgresql", version = "1.16.3")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("io.kotest:kotest-assertions-core-jvm:5.2.2")
 
 }
 
@@ -41,4 +46,12 @@ tasks.withType<KotlinCompile> {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+}
+
+tasks{
+    jacocoTestReport{
+        reports{
+            html.required.set(true)
+        }
+    }
 }

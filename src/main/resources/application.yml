@@ -11,7 +11,7 @@ management:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/test
+    url: jdbc:tc:postgresql:11:///test
     username: test
     password: test
 

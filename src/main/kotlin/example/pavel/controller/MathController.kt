@@ -1,6 +1,7 @@
 package example.pavel.controller
 
 
+import example.pavel.component.SomeLogicComponent
 import example.pavel.model.Person
 import example.pavel.repository.PersonDto
 import example.pavel.repository.PersonRepository
@@ -14,7 +15,8 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 class MathController(
-    val personRepository: PersonRepository
+    val personRepository: PersonRepository,
+    val someLogicComponent: SomeLogicComponent
 ) {
 
     @PostMapping("person")
@@ -31,6 +33,9 @@ class MathController(
 
     @GetMapping("person/name/{name}")
     fun getPersonByName(@PathVariable name: String) = personRepository.findFirstByName(name)
+
+    @GetMapping("person/other/{age}/{weight}")
+    fun doSome(@PathVariable age:Int, @PathVariable weight:Int) = someLogicComponent.isGood(age, weight)
 
 
 }
