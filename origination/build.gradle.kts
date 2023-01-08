@@ -4,7 +4,7 @@ plugins {
     kotlin("jvm") version "1.6.10"
 }
 
-group = "com.example"
+group = "pavel"
 version = "0.0.1"
 java.sourceCompatibility = JavaVersion.VERSION_11
 
