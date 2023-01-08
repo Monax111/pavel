@@ -12,6 +12,8 @@ repositories {
     mavenCentral()
 }
 
+println("1")
+
 dependencies {
 
     implementation("com.google.code.gson:gson:2.9.0")
